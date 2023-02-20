@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myblock{
+            height: 100px;
+            width: 100px;
+            border:1px solid black;
+        }
+            </style>
+    <script>
+function handleclick(){
+    var block=document.getElementById("myblock")
+    block.style.color="red"
+    block.style.backgroundColor="yellow"
+    return block
+}
+//eventhandling.html
+
+function handlemouseenter(){
+    //var block=document.getElementById("myblock")
+   var block=handleclick()
+    block.style.color="green"
+    block.style.backgroundColor="red"
+    block.style.marginTop="10vh"
+    block.innerHTML="hello there!!!!!"
+    if(marginTop >"10vh"){
+        block.style.marginBottom="10vh"
+    }else{
+        block.style.marginLeft="5vh"
+    }
+    
+}
+
+function mouseleaving(){
+    var block=document.getElementById("myblock")
+    block.style.color="black"
+    block.style.backgroundColor="white"
+    block.innerHTML="hello!!!"
+    block.style.height="50vh"
+    block.style.width="50vh"
+}
+
+function handelblur(e){
+document.getElementById("text-box-info").innerHTML="curson left /outside box"
+document.getElementById("username").style.borderColor="red"
+document.getElementById("username").style.border="5px"
+document.getElementById("username").style.backgroundColor="aqua"
+}
+function handelfocus(){
+document.getElementById("text-box-info").innerHTML="cursor inside box"
+document.getElementById("username").style.borderColor="green"
+document.getElementById("username").style.border="5px"
+
+}
+
+
+
+    </script>
+    
+</head>
+<body>
+    
+<div class="myblock"  id="myblock" onclick="handleclick()" onmouseenter="handlemouseenter()" onmouseleave="mouseleaving()">
+<p></p>hi</p>
+</div>
+<br><br><br><br><br><br><br>
+<input type="text" id="username" onblur="handleonblur()" onfocus="handelfocus()" ><br>
+<span id="text-box-info"></span>
+
+</body>
+</html>
